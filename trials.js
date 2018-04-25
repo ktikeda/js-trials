@@ -12,6 +12,9 @@ const phoneNumbers = new Map();
 
 // Add some phone numbers to our map
 
+phoneNumbers.set('home', '510-867-5309');
+phoneNumbers.set('mobile', '415-555-1212');
+phoneNumbers.set('business', '415-123-4567');
 
 
 // ///////////////////////////////////////////////////////
@@ -24,10 +27,20 @@ function printAccount(accountHolder, accountNumber, businessName) {
 	console.log(`Account Holder Number: ${accountNumber}`);
 	console.log(`Business Name: ${businessName}`);
 }
+
 // Add function to print all addresses, including a header
 
+function showAddresses(array) {
+	console.log('Addresses:');
+
+	for (let a of array) {
+		console.log(a);
+	}
+}
 
 // Add function to print phone types and numbers
+
+
 
 
 // ///////////////////////////////////////////////////////
