@@ -40,7 +40,13 @@ function showAddresses(array) {
 
 // Add function to print phone types and numbers
 
+function showPhoneNums(phoneNumbers) {
 
+	console.log('Phone Numbers:');
+	for (let p of phoneNumbers) {
+		console.log(`${p[0]}: ${p[1]}`);
+	}
+}
 
 
 // ///////////////////////////////////////////////////////
