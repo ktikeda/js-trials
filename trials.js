@@ -23,6 +23,7 @@ phoneNumbers.set('business', '415-123-4567');
 // Add function to print account information 
 
 function printAccount(accountHolder, accountNumber, businessName) {
+	
 	console.log(`Account Holder Name: ${accountHolder}`);
 	console.log(`Account Holder Number: ${accountNumber}`);
 	console.log(`Business Name: ${businessName}`);
@@ -31,8 +32,8 @@ function printAccount(accountHolder, accountNumber, businessName) {
 // Add function to print all addresses, including a header
 
 function showAddresses(array) {
+	
 	console.log('Addresses:');
-
 	for (let a of array) {
 		console.log(a);
 	}
@@ -54,15 +55,32 @@ function showPhoneNums(phoneNumbers) {
 
 // Create an empty map of transactions
 
+const transactions = new Map();
 
 // Add function to add transactions
 
+function addTransaction(date, amount, transactions) {
+	transactions.set(date, amount);
+	console.log('Added transaction');
+}
 
 // Use the function to add transactions
-
+addTransaction('May-2', -500, transactions);
+addTransaction('May-13', 1200, transactions);
+addTransaction('May-15', -100, transactions);
+addTransaction('May-21', -359, transactions);
+addTransaction('May-29', 2200, transactions);
 
 // Add function to show balance status
-
+function showBalanceStatus(balance) {
+	if (balance < 0) {
+		console.log('YOU ARE OVERDRAWN');
+	} else if (0 < balance && balance < 20) {
+		console.log('Warning: You are close to zero balance');
+	} else {
+		console.log('Thank you for your business.');
+	}
+}
 
 // Add function to show transactions
 
