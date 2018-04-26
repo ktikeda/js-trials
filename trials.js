@@ -128,10 +128,13 @@ const customer = {
 };
 
 // Function to add customer attributes
-
+function addFavMelonAndPets(object, favMelon='Cantaloupe', pets=0) {
+	object['favMelon'] = favMelon;
+	object['pets'] = pets;
+}
 
 // Add attributes for this user
-
+addFavMelonAndPets(customer, 'Casaba', 2);
 
 // ///////////////////////////////////////////////////////
 // Getting a Business Loan
