@@ -83,7 +83,35 @@ function showBalanceStatus(balance) {
 }
 
 // Add function to show transactions
+function showTransactions(transactions, balance) {
+	let tType;
+	let overdraft = false;
 
+	console.log(`Starting Balance: ${balance}`);
+	
+	for (let t of transactions) {
+		
+		if (t[1] > 0) {
+			tType = 'Deposit';
+		} else {
+			tType = 'Withdrawal';
+		}
+
+		balance += t[1];
+
+		console.log(`${t[0]} | ${tType} | ${t[1]} | ${balance}`);
+
+		if (balance < 0 && overdraft === false) {
+			showBalanceStatus(balance);
+			balance -= 25;
+			console.log(`You have incurred a $25 overdraft fee. Your new balance is ${balance}`);
+			overdraft = true;
+		}
+	}
+	console.log(`Ending Balance: ${balance}`);
+	showBalanceStatus(balance);
+
+}
 
 // ///////////////////////////////////////////////////////
 // All Customer Info:
